@@ -1,0 +1,42 @@
+
+ <%- include('partials/head') %>
+</head>
+<body class="p">
+   <%- include('partials/nav') %>
+    <main class="bg-sky-100">
+        <h1 class="text-bold">Welcome to airbnb</h1>
+    </main>
+ <ul>
+    <% regHome.forEach((home) => { %>
+    <li class="airbnb-card">
+        <div class="airbnb-card-image-container">
+            <img src="<%= home.imgUrl %>" alt="<%= home.homeName %>" class="airbnb-card-image">
+            <button class="airbnb-wishlist-button" aria-label="Add to wishlist">&#x2661;</button> <!-- Heart icon -->
+        </div>
+        <div class="airbnb-card-info">
+            <div class="airbnb-card-header">
+                <span class="airbnb-card-location"><%= home.location %></span>
+                <% if (home.rating) { %>
+                <span class="airbnb-card-rating">
+                    <span class="star-icon">★</span> <%= home.rating %>
+                </span>
+                <% } else { %>
+                <span class="airbnb-card-rating">
+                    <span class="star-icon">★</span> New
+                </span>
+                <% } %>
+            </div>
+            <h3 class="airbnb-card-name"><%= home.homeName %></h3>
+            <!-- You could add a description or property type here if available -->
+            <!-- <p class="airbnb-card-description"><%= home.description %></p> -->
+            <p class="airbnb-card-price">
+                <strong><%= home.price %></strong> / night
+            </p>
+        </div>
+    </li>
+    <% }); %>
+</ul>
+
+
+</body>
+</html>

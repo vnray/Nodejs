@@ -1,0 +1,150 @@
+h1{
+    color: red;
+}
+header{
+    background-color: red;
+    padding: 10px 0;
+    padding-left: 50px;
+}
+
+header a{
+        color: #fff;
+    font-weight: 800;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+/* General list styling (optional) */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.airbnb-card {
+    border-radius: 12px;
+    overflow: hidden; /* Ensures image corners are rounded if image is larger */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.airbnb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.airbnb-card-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%; /* 3:2 aspect ratio (200 / 300 * 100) */
+    overflow: hidden; /* Crucial for aspect ratio trick */
+}
+
+.airbnb-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container, might crop */
+    border-bottom: 1px solid #eee;
+}
+
+.airbnb-wishlist-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    color: #ff385c; /* Airbnb-like pink for the heart */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.airbnb-wishlist-button:hover {
+    background-color: white;
+}
+
+.airbnb-card-info {
+    padding: 12px 15px;
+    flex-grow: 1; /* Allows info to take remaining space if card heights vary */
+    display: flex;
+    flex-direction: column;
+}
+
+.airbnb-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+.airbnb-card-location {
+    color: #717171;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ... if location is too long */
+    max-width: 70%; /* Adjust as needed */
+}
+
+.airbnb-card-rating {
+    color: #222222;
+    font-weight: 500;
+}
+
+.star-icon {
+    color: #ff385c; /* Airbnb-like pink for the star */
+    margin-right: 2px;
+}
+
+.airbnb-card-name {
+    font-size: 1em; /* Airbnb uses a slightly smaller font for the name */
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 4px;
+    line-height: 1.3;
+    /* For multi-line truncation: */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show max 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em; /* Reserve space for 2 lines */
+}
+
+.airbnb-card-description { /* If you add a description */
+    font-size: 0.9em;
+    color: #717171;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.airbnb-card-price {
+    font-size: 1em;
+    color: #222222;
+    margin-top: auto; /* Pushes price to the bottom if card info has varying height */
+}
+
+.airbnb-card-price strong {
+    font-weight: 700;
+}
+
+.active{
+    background: #ff385c;
+    padding: 10px 10px;
+    color: #222222;
+    transition: o.6s ease-in;
+}
